@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #f3f3f3;
+      color: #333;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    form {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    label {
+      display: block;
+      margin-top: 10px;
+    }
+
+    input, button, select {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 1em;
+    }
+
+    button {
+      background-color: #000000;
+      color: white;
+      border: none;
+      cursor: pointer;
+      width: 250px;
+      position: absolute;
+      top: 175px;
+      left: 42px;
+    }
+    .hover-button {
+      background-color: #000000;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      transition: background-color 0.3s;
+    }
+    .hover-button:hover {
+      background-color: #616161;
+    }
+    #counter {
+      margin-top: 10px;
+      font-size: 20px;
+      font-weight: bold;
+      top: 15px;
+      left: 42px;
+    }
+</style>
+<body>
+    <div class="container">
+        <h1>Contador de Cliques</h1>
+        <button class="hover-button" onclick="contagemcliques()">Clique aqui</button>
+        <div id="counter">Contagem: 0</div>
+    </div>
+    <script>
+    let contagem = 0;
+
+    function contagemcliques() {
+      contagem++;
+      document.getElementById("counter").textContent = "Contagem: " + contagem;
+    }
+  </script>
+</body>
+</html>
