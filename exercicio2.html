@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #f3f3f3;
+      color: #333;
+    }
+
+    h2 {
+      border-bottom: 2px solid #4c89af;
+      padding-bottom: 5px;
+      color: #4c89af;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    form {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    label {
+      display: block;
+      margin-top: 10px;
+    }
+
+    input, button, select {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 1em;
+    }
+
+    button {
+      background-color: #4c89af;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #3b627b;
+    }
+
+    fieldset {
+      border: 1px solid #ccc;
+      padding: 11px;
+      border-radius: 5px;
+    }
+
+    legend {
+      padding: 10px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    .linha-endereco {
+      display: flex;
+      gap: 10px;
+    }
+
+    .linha-endereco .col {
+      flex: 1;
+      max-width: 570px
+    }
+
+    .linha-endereco .num {
+      max-width: 100px;
+      position: 380px;
+    }
+    
+
+</style>
+<body>
+    <div class="container">
+    <form>
+      <h2>Formulario de Cadastro</h2>
+        <fieldset>
+          <legend>Informações Pessoais</legend>
+            <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" placeholder="ex: Roberto Carlos" required />
+            <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="ex: joaozinho123@gmail.com" required />
+            <label for="senha">Senha:</label>
+                <input type="password" id="senha" name="senha" placeholder="ex: D#n0n\4o$*" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required />
+        </fieldset>
+        <fieldset>
+          <legend>Endereço</legend>
+            <div class="linha-endereco">
+  <div class="col">
+    <label for="endereço">Endereço:</label>
+    <input type="text" id="Endereço" name="endereço" placeholder="ex: Rua dos Coqueiros" pattern="[A-Za-z]" required />
+  </div>
+  <div class="col num">
+    <label for="numero">Número:</label>
+    <input type="number" id="numero" name="numero" placeholder="ex: 123" required />
+  </div>
+</div>
+      <label for="cidade">Cidade:</label>
+        <input type="text" id="cidade" name="cidade" placeholder="ex: Barretos" pattern="[A-Za-z]" required />
+
+      <label for="cep">CEP:</label>
+        <input type="text" id="cep" name="cep" pattern="\d{5}-?\d{3}" placeholder="ex: 12345-678" required>   
+        </fieldset>
+        <button type="submit">Enviar</button>
+      </form>
+    </div>
+</body>
+
+</html>
