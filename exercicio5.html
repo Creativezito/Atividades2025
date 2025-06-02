@@ -12,6 +12,21 @@
       color: #333;
     }
 
+    .container {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    form {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
     * {
       margin: 0;
       padding: 0;
@@ -84,12 +99,24 @@
       font-size: 0.9em;
       color: #666;
     }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.05);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
   </style>
 </head>
 <body>
 
   <header>
-    <h1>Meu Site</h1>
+    <h1>Benjamim</h1>
     <p>Bem-vindo ao MELHOR site do planeta terra</p>
   </header>
 
@@ -117,10 +144,6 @@
         <h1>Lorem Ipsum</h1>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris maximus, nisi sit amet fermentum aliquet, tellus nunc pellentesque ipsum, at ultricies sapien arcu nec arcu. Nunc euismod ex id velit dictum mollis. Proin ultricies fermentum ligula non feugiat. Aenean suscipit sit amet risus quis cursus. Pellentesque leo augue, vulputate vitae rutrum sed, consequat non libero. Nam purus dolor, tempus nec elementum suscipit, iaculis quis sapien. Vestibulum tristique vestibulum purus id aliquet. Aliquam sed mollis risus.</p>
 
-        <figure>
-          <img src="galeria/surpreso.jpg" alt="surpreso" style="width: 100%; max-width: 600px;" />
-          <figcaption>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</figcaption>
-        </figure>
       </article>
     </section>
 
