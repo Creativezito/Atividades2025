@@ -81,14 +81,19 @@
     .linha-endereco .col {
       flex: 1;
       max-width: 570px
+      gap: 10px;
     }
 
     .linha-endereco .num {
       max-width: 100px;
-      position: 380px;
+      position: 400px;
     }
     
-
+    .linha-cep .col {
+      flex: 1;
+      max-width: 200px;
+    }
+    
 </style>
 <body>
     <div class="container">
@@ -118,12 +123,11 @@
       <label for="cidade">Cidade:</label>
         <input type="text" id="cidade" name="cidade" placeholder="ex: Barretos" pattern="[A-Za-z]" required />
 
-      <label for="cep">CEP:</label>
+      <label for="linha-cep">CEP:</label>
         <input type="text" id="cep" name="cep" pattern="\d{5}-?\d{3}" placeholder="ex: 12345-678" required>   
         </fieldset>
         <button type="submit">Enviar</button>
       </form>
     </div>
 </body>
-
 </html>
