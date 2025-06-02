@@ -71,6 +71,17 @@
       font-size: 20px;
       font-weight: bold;
     }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: auto;
+    }
+
   </style>
 </head>
 <body>
@@ -83,8 +94,6 @@
     <button type="button" class="btn btn-primary mt-4" data-toggle="modal" data-target="#modalExemplo">
       Abrir modal
     </button>
-  </div>
-
   <div class="modal fade" id="modalExemplo" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
@@ -103,6 +112,19 @@
       </div>
     </div>
   </div>
+   <div class="gallery">
+      <div>
+        <img src="galeria/coragem.jpg" alt="Imagem 1" class="img-fluid">
+      </div>
+      <div>
+        <img src="galeria/surpreso.jpg" alt="Imagem 2" class="img-fluid">
+      </div>
+      <div>
+        <img src="galeria/galo cego.jpg" alt="Imagem 3" class="img-fluid">
+      </div>
+    </div>
+  </div>
+</div>
 
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
