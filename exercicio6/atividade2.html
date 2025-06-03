@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
+  <link rel="stylesheet" href="https://mui.com/static/css/mui-material.min.css" />
+
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+    }
+
+    .mui-modal {
+      display: none;
+      position: fixed;
+      z-index: 1050;
+      left: 0;
+      top: 0;
+      width: 100vw;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.5);
+      align-items: center;
+      justify-content: center;
+    }
+
+    .mui-modal-content {
+      background-color: #fff;
+      padding: 24px;
+      border-radius: 8px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+      width: 90%;
+      max-width: 500px;
+    }
+
+    .mui-modal-header {
+      font-size: 1.25rem;
+      font-weight: 500;
+      margin-bottom: 16px;
+    }
+
+    .mui-modal-footer {
+      text-align: right;
+      margin-top: 20px;
+    }
+
+    .mui-button {
+      background-color: #0a0a0a;
+      color: white;
+      padding: 8px 16px;
+      border: none;
+      border-radius: 4px;
+      font-weight: 500;
+      cursor: pointer;
+    }
+
+    .mui-button:hover {
+      background-color: #646464;
+    }
+
+    .mui-close-button {
+      background: none;
+      border: none;
+      font-size: 1.2rem;
+      float: right;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <div style="text-align: center; margin-top: 50px;">
+    <button class="mui-button" onclick="openModal()">Abrir Modal</button>
+  </div>
+
+  <div id="muiModal" class="mui-modal">
+    <div class="mui-modal-content">
+      <button class="mui-close-button" onclick="closeModal()">&times;</button>
+      <div class="mui-modal-header">Lorem Ipsum</div>
+      <div class="mui-modal-body">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      </div>
+      <div class="mui-modal-footer">
+        <button class="mui-button" onclick="closeModal()">Fechar</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function openModal() {
+      document.getElementById('muiModal').style.display = 'flex';
+    }
+
+    function closeModal() {
+      document.getElementById('muiModal').style.display = 'none';
+    }
+
+    window.onclick = function (event) {
+      const modal = document.getElementById('muiModal');
+      if (event.target === modal) {
+        closeModal();
+      }
+    }
+  </script>
+
+</body>
+</html>
