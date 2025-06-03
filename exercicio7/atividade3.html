@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    body {
+      font-family: sans-serif;
+      padding: 20px;
+      background-color: #ffffff;
+    }
+    input[type="text"], input[type="password"] {
+        width: calc(100% - 22px);
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+    }
+
+    button {
+        background-color: #000000;
+        color: white;
+        border: none;
+        cursor: pointer;
+        width: 10%;
+        padding: 10px;
+    }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h1>Login</h1>
+        <form id="loginForm">
+            <label for="username">Usuário:</label>
+            <input type="text" id="username" name="username" required>
+            <label for="password">Senha:</label>
+            <input type="password" id="password" name="password" required>
+            <button type="submit">Entrar</button>
+        </form>
+        <div id="loginMessage"></div>
+    </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', handleLogin);
+
+        async function handleLogin(event) {
+            event.preventDefault();
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const loginMessage = document.getElementById('loginMessage');
+
+            loginMessage.innerHTML = 'Verificando credenciais...';
+            loginMessage.className = '';s
+
+            try {
+                const response = await fetch('https://reqres.in/api/login', {
+                    method: 'POST',
+                    headers: {
+                        'x-api-key': 'reqres-free-v1',
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ email: username, password: password }),
+                });
+
+                const data = await response.json();
+
+                if (response.ok) { 
+                    loginMessage.innerHTML = 'Login bem-sucedido! Token: ' + data.token;
+                    loginMessage.classList.add('success');
+                } else {
+                    loginMessage.innerHTML = 'Erro de login: ' + (data.error || 'Credenciais inválidas.');
+                    loginMessage.classList.add('error');
+                }
+
+            } catch (error) {
+                console.error('Erro na requisição de login:', error);
+                loginMessage.innerHTML = `Erro de rede ou servidor: ${error.message}`;
+                loginMessage.classList.add('error');
+            }
+        }
+    </script>
+</body>
+</html>
